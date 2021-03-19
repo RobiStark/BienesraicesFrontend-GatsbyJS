@@ -24,7 +24,7 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+          Hola Mundo en Gatsby
         </Link>
       </h1>
     </div>
