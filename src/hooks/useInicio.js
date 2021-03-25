@@ -14,7 +14,9 @@ const useInicio = () => {
               contenido
               imagen{
                         sharp: childImageSharp{
-                            fluid(maxWidth: 1200){
+                            fluid(maxWidth: 1500 duotone:{
+                                highlight: "#222222", shadow: "#192550", opacity: 30
+                            }){
                                 ...GatsbyImageSharpFluid_withWebp
                             }
                         }

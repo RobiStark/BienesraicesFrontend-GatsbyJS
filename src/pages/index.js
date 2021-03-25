@@ -3,6 +3,14 @@ import React from 'react';
 import useInicio from '../hooks/useInicio';
 import {css} from '@emotion/react';
 import styled from '@emotion/styled';
+import BackgroudImage from 'gatsby-background-image';
+import * as heroCSS from '../css/hero.module.css';
+import Encuentra from '../components/encuentra';
+import ListadoPropiedades from '../components/ListadoPropiedades';
+
+const ImageBackgroud = styled(BackgroudImage)`
+    height: 600px;
+`
 
 const Index = () => {
 
@@ -10,11 +18,22 @@ const Index = () => {
         const inicio = useInicio();
 
         const {nombre, contenido, imagen} = inicio[0];
+        //console.log({imagen});
 
     return(
         
         <Layout>
             <main>
+                <ImageBackgroud
+                    tag="section"
+                    fluid={imagen.sharp.fluid}
+                    fadeIn="soft"
+                >
+
+                    <div className={heroCSS.imagenbg}>
+                        <h1 className={heroCSS.titulo}>Venta de casas y departamentos exclusivos</h1>
+                    </div>
+                </ImageBackgroud>
                 <div
                     css={css`
                         max-width: 800px;
@@ -30,6 +49,9 @@ const Index = () => {
 
                 </div>
             </main>
+
+            <Encuentra/>
+            <ListadoPropiedades/>
 
         </Layout>
     )
